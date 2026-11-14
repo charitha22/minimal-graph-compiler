@@ -1,4 +1,4 @@
-// RUN: gc-opt %s | FileCheck %s
+// RUN: mgc-opt %s | FileCheck %s
 
 // CHECK:      func.func @add(%arg0: i32, %arg1: i32) -> i32
 // CHECK-NEXT:   %0 = arith.addi %arg0, %arg1 : i32

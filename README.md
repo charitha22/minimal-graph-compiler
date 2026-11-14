@@ -1,6 +1,6 @@
-# gc — Minimal Graph Compiler
+# mgc — Minimal Graph Compiler
 
-A minimal MLIR-based compiler, currently providing a single tool `gc-opt` that parses,
+A minimal MLIR-based compiler, currently providing a single tool `mgc-opt` that parses,
 optimises, and prints MLIR modules.
 
 ## Building
@@ -19,21 +19,21 @@ cmake -B build -DLLVM_BUILD_DIR=/path/to/llvm-project/build
 cmake --build build
 ```
 
-The `gc-opt` binary is placed in `build/bin/`.
+The `mgc-opt` binary is placed in `build/bin/`.
 
 ## Running tests
 
-Use the `check-gc` target to run all tests:
+Use the `check-mgc` target to run all tests:
 
 ```sh
-cmake --build build --target check-gc
+cmake --build build --target check-mgc
 ```
 
-This runs `gc-opt` on each test file in `test/` and verifies the output with
+This runs `mgc-opt` on each test file in `test/` and verifies the output with
 **FileCheck**.
 
 You can also run a single test manually:
 
 ```sh
-gc-opt test/check-gc-opt.mlir | FileCheck test/check-gc-opt.mlir
+mgc-opt test/check-mgc-opt.mlir | FileCheck test/check-mgc-opt.mlir
 ```

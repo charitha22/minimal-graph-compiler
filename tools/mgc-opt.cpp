@@ -1,4 +1,4 @@
-//===- gc-opt.cpp - Minimal MLIR optimizer driver -------------------------===//
+//===- mgc-opt.cpp - Minimal MLIR optimizer driver ------------------------===//
 //
 // A tiny mlir-opt clone: read an MLIR file, parse it, run an (initially
 // empty) pass pipeline, then print the result.
@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
   PassPipelineCLParser passPipeline("", "Compiler passes to run", "p");
 
   llvm::cl::ParseCommandLineOptions(
-      argc, argv, "gc-opt - minimal MLIR optimizer driver\n");
+      argc, argv, "mgc-opt - minimal MLIR optimizer driver\n");
 
   // Register the dialects this tool understands.
   DialectRegistry registry;

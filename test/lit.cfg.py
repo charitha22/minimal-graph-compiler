@@ -37,6 +37,6 @@ for d in tool_dirs:
 # Register available tools.
 tools = [
     "FileCheck",
-    "gc-opt",
+    "mgc-opt",
 ]
 llvm_config.add_tool_substitutions(tools, tool_dirs)
