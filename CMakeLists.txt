@@ -9,6 +9,12 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
+enable_testing()
+
+# Optional: the mgc Python runtime package (python/mgc).  It wraps the MLIR
+# Python bindings from the same LLVM build used for mgc-opt.
+option(MGC_ENABLE_PYTHON "Enable the mgc Python runtime package" ON)
+
 # LLVM_BUILD_DIR must be provided on the command line:
 #   -DLLVM_BUILD_DIR=/path/to/llvm-project/build
 set(MLIR_DIR "${LLVM_BUILD_DIR}/lib/cmake/mlir" CACHE PATH
@@ -31,3 +37,7 @@ include(AddLLVM)
 add_subdirectory(lib)
 add_subdirectory(tools)
 add_subdirectory(test)
+
+if(MGC_ENABLE_PYTHON)
+  add_subdirectory(python)
+endif()
