@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mgc"
+version = "0.1.0"
+description = "Python runtime for the mgc minimal graph compiler"
+requires-python = ">=3.10"
+dependencies = ["numpy"]
+
+[tool.setuptools]
+packages = ["mgc"]
